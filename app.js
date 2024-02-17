@@ -33,7 +33,14 @@ function btnFlash(btn){
     btnFlash (randBtn);
 }
 
-
+ function btnPress(){
+    let btn=this;
+    btnFlash(btn);
+}
+allBtns=document.querySelectorAll(".btn");
+for(btn of allBtns){
+    btn.addEventListener("click",btnPress);
+}
 
 
 
