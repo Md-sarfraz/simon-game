@@ -45,7 +45,12 @@ function checkAns(idx){
         }
     }
     else{
-        h2.innerText="Game Over! press any keys to start"
+        h2.innerHTML=`Game Over! Your Score Was <b>${level}</b> press any keys to start`
+        document.querySelector("body").style.backgroundColor="red"
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor="white"
+        },150)
+         reset();
     }
 }
 
@@ -62,6 +67,9 @@ for(btn of allBtns){
     btn.addEventListener("click",btnPress);
 }
 
-
-
-
+function reset(){
+started=false
+gameSeq=[];
+userSeq=[];
+level=0;
+}
